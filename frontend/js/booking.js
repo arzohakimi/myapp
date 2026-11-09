@@ -19,7 +19,7 @@ async function handleBookingSubmit(event) {
   event.preventDefault();
 
   const statusEl = document.getElementById("form-status");
-  statusEl.className = "";
+  statusEl.className = "status-message";
 
   // Read every field in the form into one object, using each field's name
   const bookingData = Object.fromEntries(new FormData(event.target));

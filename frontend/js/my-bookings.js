@@ -21,11 +21,13 @@ async function renderBookings() {
 
       return `
         <div class="booking-item">
-          <h3>${roomName}</h3>
-          <p><strong>Club:</strong> ${booking.clubName}</p>
-          <p><strong>Date:</strong> ${booking.date}</p>
-          <p><strong>Time:</strong> ${booking.startTime} - ${booking.endTime}</p>
-          <p><strong>Purpose:</strong> ${booking.purpose}</p>
+          <div class="booking-details">
+            <h3>${roomName}</h3>
+            <p><strong>Club:</strong> ${booking.clubName}</p>
+            <p><strong>Date:</strong> ${booking.date}</p>
+            <p><strong>Time:</strong> ${booking.startTime} - ${booking.endTime}</p>
+            <p><strong>Purpose:</strong> ${booking.purpose}</p>
+          </div>
           <button class="cancel-btn" data-id="${booking.id}">Cancel</button>
         </div>
       `;
