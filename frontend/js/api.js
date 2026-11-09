@@ -57,16 +57,21 @@ async function getRoomById(id) {
 // ---------- Bookings ----------
 
 async function getBookings() {
-  // TODO (Stage 1): return MOCK_BOOKINGS
   // TODO (Stage 3): fetch("/api/bookings") and return the parsed JSON
+  return MOCK_BOOKINGS;
 }
 
 async function createBooking(bookingData) {
   // bookingData looks like:
   // { roomId, clubName, date, startTime, endTime, purpose }
 
-  // TODO (Stage 1): push a new object (with a generated id) into
-  //   MOCK_BOOKINGS and return it.
+  const newBooking = {
+    id: String(Date.now()),
+    ...bookingData,
+  };
+  MOCK_BOOKINGS.push(newBooking);
+  return newBooking;
+
   // TODO (Stage 3): fetch("/api/bookings", {
   //   method: "POST",
   //   headers: { "Content-Type": "application/json" },
@@ -75,6 +80,7 @@ async function createBooking(bookingData) {
 }
 
 async function deleteBooking(id) {
-  // TODO (Stage 1): remove the matching booking from MOCK_BOOKINGS.
+  MOCK_BOOKINGS = MOCK_BOOKINGS.filter((booking) => booking.id !== id);
+
   // TODO (Stage 3): fetch(`/api/bookings/${id}`, { method: "DELETE" }).
 }
